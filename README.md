@@ -4,14 +4,14 @@
 
 | Column                 | Type     | Options                 |
 | ------------------     | ------   | -----------             |
-| nickname               | string   | null: false |unique:true|
-| email                  | string   | null: false             |
+| nickname               | string   | null: false             |
+| email                  | string   | null: false, unique:true|
 | encrypted_password     | string   | null: false             |
 | last_name              | string   | null: false             |
-| first_name             | string   | null: false |
-| last_name_reading      | string   | null: false |
-| first_name_reading     | string   | null: false |
-| birthday               | date     | null: false |
+| first_name             | string   | null: false             |
+| last_name_reading      | string   | null: false             |
+| first_name_reading     | string   | null: false             |
+| birthday               | date     | null: false             |
 
 has_many :items
 has_many :buyers
@@ -20,8 +20,8 @@ has_many :buyers
 
 | Column            | Type      | Options     |
 | ------------------| ------    | ----------- |
-| name              | text      | null: false |
-| text              | string    | null: false |
+| name              | string    | null: false |
+| text              | text      | null: false |
 | category_id       | integer   | null: false |
 | condition_id      | integer   | null: false |
 | responsibility_id | integer   | null: false |
