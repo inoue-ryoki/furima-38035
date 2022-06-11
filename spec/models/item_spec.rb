@@ -30,29 +30,29 @@ RSpec.describe Item, type: :model do
       end
 
       it 'category_idが空では保存できない' do
-        @item.category_id = '1'
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Category can't be blank")
       end
       it 'condition_idが空では保存できない' do
-        @item.condition_id = '1'
+        @item.condition_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition can't be blank")
       end
 
       it 'responsibility_idが空では保存できない' do
-        @item.responsibility_id = '1'
+        @item.responsibility_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Responsibility can't be blank")
       end
       it 'area_idが空では保存できない' do
-        @item.area_id = '1'
+        @item.area_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Area can't be blank")
       end
 
       it 'period_idが空では保存できない' do
-        @item.period_id = '1'
+        @item.period_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Period can't be blank")
       end
@@ -63,18 +63,18 @@ RSpec.describe Item, type: :model do
       end
 
       it 'priceが299以下では保存できない' do
-        @item.price = '299'
+        @item.price = 299
         @item.valid?
         expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
       end
 
       it 'priceが10000000以上では保存できない' do
-        @item.price = '10000000'
+        @item.price = 10000000
         @item.valid?
         expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
       end
       it 'priceが全角数値なら保存できない' do
-        @item.price = '１'
+        @item.price = "１"
         @item.valid?
         expect(@item.errors.full_messages).to include('Price is not a number')
       end
