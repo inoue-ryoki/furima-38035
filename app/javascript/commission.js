@@ -11,9 +11,9 @@ function commission() {
     // 料金の利益のidを取得
     const inputValue = price.value;
     // 入力された料金の値を取得
-    const tax = Math.round(inputValue * 0.1);
+    const tax = Math.floor(inputValue * 0.1);
     // 手数料の計算
-    const profit = Math.round(inputValue - tax)
+    const profit = Math.floor(inputValue - tax)
     // 販売履歴の計算
 
 

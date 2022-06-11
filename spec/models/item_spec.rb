@@ -30,29 +30,29 @@ RSpec.describe Item, type: :model do
       end
 
       it 'category_idが空では保存できない' do
-        @item.category_id = ''
+        @item.category_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Category can't be blank")
       end
       it 'condition_idが空では保存できない' do
-        @item.condition_id = ''
+        @item.condition_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition can't be blank")
       end
 
       it 'responsibility_idが空では保存できない' do
-        @item.responsibility_id = ''
+        @item.responsibility_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Responsibility can't be blank")
       end
       it 'area_idが空では保存できない' do
-        @item.area_id = ''
+        @item.area_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Area can't be blank")
       end
 
       it 'period_idが空では保存できない' do
-        @item.period_id = ''
+        @item.period_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Period can't be blank")
       end
