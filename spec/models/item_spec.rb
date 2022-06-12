@@ -69,12 +69,12 @@ RSpec.describe Item, type: :model do
       end
 
       it 'priceが10000000以上では保存できない' do
-        @item.price = 10000000
+        @item.price = 10_000_000
         @item.valid?
         expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
       end
       it 'priceが全角数値なら保存できない' do
-        @item.price = "１"
+        @item.price = '１'
         @item.valid?
         expect(@item.errors.full_messages).to include('Price is not a number')
       end
