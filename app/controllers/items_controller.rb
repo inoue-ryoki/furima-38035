@@ -24,6 +24,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @items = Item.order('created_at DESC')
+
+    render :index if @item.buyer.present?
   end
 
   def update
