@@ -24,6 +24,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+
+
+    redirect_to items_path if @item.buyer.present?
   end
 
   def update
