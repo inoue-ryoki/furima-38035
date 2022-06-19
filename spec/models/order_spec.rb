@@ -48,14 +48,21 @@ RSpec.describe Order, type: :model do
         expect(@order.errors.full_messages).to include("House number can't be blank")
       end
 
-      it 'telephone_numberが1円未満では保存できないこと' do
+      it 'telephone_numberが空では保存できないこと' do
         @order.telephone_number = ''
         @order.valid?
 
         expect(@order.errors.full_messages).to include("Telephone number can't be blank")
       end
-      it 'telephone_numberが10桁以上11桁以内のみ保存可能なこと' do
+      it 'telephone_numberが9桁以下では保存できないこと' do
         @order.telephone_number = '111111111'
+        @order.valid?
+
+        expect(@order.errors.full_messages).to include('Telephone number is invalid')
+      end
+
+           it 'telephone_numberが12桁以上では保存できないこと' do
+        @order.telephone_number = '111111111111'
         @order.valid?
 
         expect(@order.errors.full_messages).to include('Telephone number is invalid')

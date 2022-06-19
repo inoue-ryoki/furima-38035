@@ -8,7 +8,7 @@ class Order
   validates :area_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :city, presence: true
   validates :house_number, presence: true
-  validates :telephone_number, presence: true, format: { with: /\A\d{11}\z/ }
+  validates :telephone_number, presence: true, format: { with: /\A\d{10,11}\z/ }
   validates :user_id, presence: true
   validates :item_id, presence: true
   validates :token, presence: true
