@@ -1,9 +1,10 @@
 class OrdersController < ApplicationController
+    before_action :authenticate_user!, only: [:index]
   def index
     @order = Order.new
     @item = Item.find(params[:item_id])
     @items = Item.order('created_at DESC')
-    render template: 'items/index' if @item.buyer.present? || @item.user_id == current_user.id
+    render template: 'items/index' if @item.buyer.present? || @item.user_id == current_user&.id
   end
 
   def create
